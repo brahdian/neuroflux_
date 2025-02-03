@@ -1,4 +1,4 @@
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, find_packages
 
 setup(
     name="neuroflux",
@@ -9,7 +9,7 @@ setup(
     author="NeuroFlux Team",
     author_email="team@neuroflux.ai",
     url="https://github.com/brahdian/neuroflux_",
-    packages=find_namespace_packages(include=["*"]),
+    packages=find_packages(),
     python_requires=">=3.8",
     install_requires=[
         "torch>=2.0.0",
