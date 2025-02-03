@@ -1,38 +1,5 @@
 from setuptools import setup, find_namespace_packages
 
-# Core dependencies required for basic functionality
-CORE_DEPS = [
-    "torch>=2.0.0",
-    "numpy>=1.24.0",
-    "tqdm>=4.65.0",
-    "pyyaml>=6.0",
-    "jsonschema>=4.17.0",
-    "matplotlib>=3.4.0",
-    "pandas>=1.3.0",
-    "plotly>=5.0.0",
-]
-
-# Optional TPU-specific dependencies (Python <3.11 only)
-TPU_DEPS = [
-    "cloud-tpu-client; python_version<'3.11'",
-    "torch_xla @ git+https://github.com/pytorch/xla; python_version<'3.11'",
-]
-
-# Monitoring dependencies
-MONITORING_DEPS = [
-    "wandb>=0.15.0",
-    "psutil>=5.9.0",
-    "gputil>=1.4.0",
-    "tensorboard>=2.12.0",
-]
-
-# Distributed training dependencies
-DISTRIBUTED_DEPS = [
-    "deepspeed>=0.9.0",
-    "torch>=2.0.0",
-    "accelerate>=0.20.0",
-]
-
 setup(
     name="neuroflux",
     version="0.1.0",
@@ -43,13 +10,26 @@ setup(
     author_email="team@neuroflux.ai",
     url="https://github.com/brahdian/neuroflux_",
     packages=find_namespace_packages(include=["neuroflux*"]),
-    python_requires=">=3.8",  # Remove Python 3.11 restriction
-    install_requires=CORE_DEPS,
+    python_requires=">=3.8",
+    install_requires=[
+        "torch>=2.0.0",
+        "numpy>=1.24.0",
+        "tqdm>=4.65.0",
+        "pyyaml>=6.0",
+        "jsonschema>=4.17.0",
+        "matplotlib>=3.4.0",
+        "pandas>=1.3.0",
+        "plotly>=5.0.0",
+        "wandb>=0.15.0",
+        "psutil>=5.9.0",
+        "gputil>=1.4.0",
+        "tensorboard>=2.12.0",
+        "deepspeed>=0.9.0",
+        "accelerate>=0.20.0",
+        "torch-xla-nightly-cpu; python_version<'3.11'",
+        "cloud-tpu-client; python_version<'3.11'"
+    ],
     extras_require={
-        "tpu": TPU_DEPS,
-        "monitoring": MONITORING_DEPS,
-        "distributed": DISTRIBUTED_DEPS,
-        "all": TPU_DEPS + MONITORING_DEPS + DISTRIBUTED_DEPS,
         "dev": [
             "pytest>=7.3.1",
             "black>=23.3.0",
