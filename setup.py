@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 # Core dependencies required for basic functionality
 CORE_DEPS = [
@@ -42,7 +42,7 @@ setup(
     author="NeuroFlux Team",
     author_email="team@neuroflux.ai",
     url="https://github.com/brahdian/neuroflux_",
-    packages=find_packages(),
+    packages=find_namespace_packages(include=["neuroflux_*"]),
     python_requires=">=3.8,<3.11",  # TPU support requires Python <3.11
     install_requires=CORE_DEPS,
     extras_require={
