@@ -1,5 +1,15 @@
 from setuptools import setup, find_namespace_packages
 
+packages = [
+    'neuroflux',
+    'neuroflux.core',
+    'neuroflux.system',
+    'neuroflux.training',
+    'neuroflux.monitoring',
+    'neuroflux.utils',
+    'neuroflux.evaluation'
+]
+
 setup(
     name="neuroflux",
     version="0.1.0",
@@ -9,7 +19,8 @@ setup(
     author="NeuroFlux Team",
     author_email="team@neuroflux.ai",
     url="https://github.com/brahdian/neuroflux_",
-    packages=find_namespace_packages(include=["neuroflux*"]),
+    packages=packages,
+    package_dir={'': '.'},
     python_requires=">=3.8",
     install_requires=[
         "torch>=2.0.0",
