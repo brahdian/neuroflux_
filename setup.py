@@ -42,9 +42,9 @@ setup(
     author="NeuroFlux Team",
     author_email="team@neuroflux.ai",
     url="https://github.com/brahdian/neuroflux_",
-    packages=find_packages(exclude=["tests*"]),
+    packages=find_packages(),
     python_requires=">=3.8,<3.11",  # TPU support requires Python <3.11
-    install_requires=CORE_DEPS + TPU_DEPS,
+    install_requires=CORE_DEPS,
     extras_require={
         "tpu": TPU_DEPS,
         "monitoring": MONITORING_DEPS,
@@ -68,15 +68,6 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    package_data={
-        'neuroflux': [
-            'core/*',
-            'system/*',
-            'training/*',
-            'monitoring/*',
-            'utils/*'
-        ]
-    },
     include_package_data=True,
     zip_safe=False,
 ) 
