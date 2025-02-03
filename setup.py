@@ -12,10 +12,10 @@ CORE_DEPS = [
     "plotly>=5.0.0",
 ]
 
-# TPU-specific dependencies
+# Optional TPU-specific dependencies (Python <3.11 only)
 TPU_DEPS = [
-    "cloud-tpu-client",
-    "torch_xla @ git+https://github.com/pytorch/xla",  # Get latest XLA version
+    "cloud-tpu-client; python_version<'3.11'",
+    "torch_xla @ git+https://github.com/pytorch/xla; python_version<'3.11'",
 ]
 
 # Monitoring dependencies
@@ -29,7 +29,7 @@ MONITORING_DEPS = [
 # Distributed training dependencies
 DISTRIBUTED_DEPS = [
     "deepspeed>=0.9.0",
-    "torch>=2.0.0",  # Ensure FSDP compatibility
+    "torch>=2.0.0",
     "accelerate>=0.20.0",
 ]
 
@@ -42,8 +42,8 @@ setup(
     author="NeuroFlux Team",
     author_email="team@neuroflux.ai",
     url="https://github.com/brahdian/neuroflux_",
-    packages=find_namespace_packages(include=["neuroflux_*"]),
-    python_requires=">=3.8,<3.11",  # TPU support requires Python <3.11
+    packages=find_namespace_packages(include=["neuroflux*"]),
+    python_requires=">=3.8",  # Remove Python 3.11 restriction
     install_requires=CORE_DEPS,
     extras_require={
         "tpu": TPU_DEPS,
@@ -66,6 +66,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     include_package_data=True,
