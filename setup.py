@@ -3,7 +3,7 @@ from setuptools import setup, find_namespace_packages
 setup(
     name="neuroflux",
     version="0.1.0",
-    description="Self-Optimizing, Fault-Tolerant Neural Architecture",
+    description="Self-Optimizing Fault-Tolerant Neural Architecture",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="NeuroFlux Team",
