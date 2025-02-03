@@ -41,10 +41,10 @@ setup(
     long_description_content_type="text/markdown",
     author="NeuroFlux Team",
     author_email="team@neuroflux.ai",
-    url="https://github.com/neuroflux/neuroflux",
+    url="https://github.com/brahdian/neuroflux_",
     packages=find_packages(exclude=["tests*"]),
     python_requires=">=3.8,<3.11",  # TPU support requires Python <3.11
-    install_requires=CORE_DEPS,
+    install_requires=CORE_DEPS + TPU_DEPS,
     extras_require={
         "tpu": TPU_DEPS,
         "monitoring": MONITORING_DEPS,
@@ -59,12 +59,6 @@ setup(
             "pytest-xdist>=3.3.0",
         ],
     },
-    entry_points={
-        "console_scripts": [
-            "neuroflux-train=neuroflux.cli.train:main",
-            "neuroflux-monitor=neuroflux.cli.monitor:main",
-        ],
-    },
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
@@ -74,6 +68,15 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
+    package_data={
+        'neuroflux': [
+            'core/*',
+            'system/*',
+            'training/*',
+            'monitoring/*',
+            'utils/*'
+        ]
+    },
     include_package_data=True,
     zip_safe=False,
 ) 

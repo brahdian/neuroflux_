@@ -13,12 +13,11 @@ from typing import Dict, Optional, List, Tuple
 from pathlib import Path
 import logging
 
-from core.trainers import UnifiedTrainer
-from core.unified_layer import UnifiedNeuroFlux
-from system.raid import EnhancedRAID6
-from monitoring.monitoring import PerformanceMonitor
-from core.tpu_utils import TPUManager
-from core.raid import TPUCompatibleRAID  # New RAID implementation for TPU
+from ..core.trainers import UnifiedTrainer
+from ..core.unified_layer import UnifiedNeuroFlux
+from ..system.raid import EnhancedRAID6
+from ..monitoring.monitoring import PerformanceMonitor
+from ..core.tpu_utils import TPUManager
 
 logger = logging.getLogger(__name__)
 
@@ -55,7 +54,7 @@ class TPUNeuroFluxTrainer(UnifiedTrainer):
         self.batch_size = config.get('batch_size', 32)
         
         self.tpu_manager = TPUManager()
-        self.raid = TPUCompatibleRAID(
+        self.raid = EnhancedRAID6(
             num_blocks=self.config.raid_blocks,
             parity_blocks=self.config.parity_blocks
         )
