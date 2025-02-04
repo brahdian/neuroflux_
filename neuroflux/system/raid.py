@@ -12,7 +12,7 @@ import time
 import matplotlib.pyplot as plt
 from collections import deque
 import threading
-from ..utils.logging_config import setup_logger
+from neuroflux.utils.logging_config import setup_logger
 import torch_xla.core.xla_model as xm
 
 logger = setup_logger(__name__)

@@ -10,9 +10,9 @@ import torch.nn.functional as F
 from pathlib import Path
 from typing import Dict, Tuple, Optional, List
 import logging
-from .raid import EnhancedRAID6
+from neuroflux.system.raid import EnhancedRAID6
 import threading
-from ..utils.logging_config import setup_logger
+from neuroflux.utils.logging_config import setup_logger
 
 logger = setup_logger(__name__)
 

@@ -1,4 +1,4 @@
-from .monitoring import (
+from neuroflux.monitoring.monitoring import (
     PerformanceMonitor,
     MetricsLogger,
     SystemStats

@@ -17,8 +17,8 @@ from concurrent.futures import ThreadPoolExecutor
 import subprocess
 import psutil
 import GPUtil
-from evaluation.cost_tracking import CostTracker
-from evaluation.mttr_tracking import MTTRTracker
+from neuroflux.evaluation.cost_tracking import CostTracker
+from neuroflux.evaluation.mttr_tracking import MTTRTracker
 
 logger = logging.getLogger(__name__)
 

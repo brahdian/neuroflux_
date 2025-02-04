@@ -1,17 +1,17 @@
 # This file can be empty
 
-from .core.unified_layer import UnifiedNeuroFlux, RoutingStats, RAIDState
-from .core.trainers import UnifiedTrainer, UsageStats
-from .training.tpu_trainer import TPUNeuroFluxTrainer
-from .training.hardware_trainer import HardwareAwareTrainer, HardwareManager
-from .system.raid import EnhancedRAID6, RAIDConfig, ReedSolomon, GF256
-from .core.hypernetwork import (
+from neuroflux.core.unified_layer import UnifiedNeuroFlux, RoutingStats, RAIDState
+from neuroflux.core.trainers import UnifiedTrainer, UsageStats
+from neuroflux.training.tpu_trainer import TPUNeuroFluxTrainer
+from neuroflux.training.hardware_trainer import HardwareAwareTrainer, HardwareManager
+from neuroflux.system.raid import EnhancedRAID6, RAIDConfig, ReedSolomon, GF256
+from neuroflux.core.hypernetwork import (
     DifferentiableHyperNetwork,
     UnifiedHyperNetwork,
     UnifiedHyperAction,
     UnifiedMetrics
 )
-from .monitoring.monitoring import PerformanceMonitor
+from neuroflux.monitoring.monitoring import PerformanceMonitor
 
 __all__ = [
     # Core models

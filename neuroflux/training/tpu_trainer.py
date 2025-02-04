@@ -13,11 +13,11 @@ from typing import Dict, Optional, List, Tuple
 from pathlib import Path
 import logging
 
-from ..core.trainers import UnifiedTrainer
-from ..core.unified_layer import UnifiedNeuroFlux
-from ..system.raid import EnhancedRAID6
-from ..monitoring.monitoring import PerformanceMonitor
-from ..core.tpu_utils import TPUManager
+from neuroflux.core.trainers import UnifiedTrainer
+from neuroflux.core.unified_layer import UnifiedNeuroFlux
+from neuroflux.system.raid import EnhancedRAID6
+from neuroflux.monitoring.monitoring import PerformanceMonitor
+from neuroflux.utils.tpu_utils import TPUManager
 
 logger = logging.getLogger(__name__)
 

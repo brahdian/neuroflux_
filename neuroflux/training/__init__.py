@@ -1,5 +1,5 @@
-from .tpu_trainer import TPUNeuroFluxTrainer
-from .hardware_trainer import (
+from neuroflux.training.tpu_trainer import TPUNeuroFluxTrainer
+from neuroflux.training.hardware_trainer import (
     HardwareAwareTrainer,
     HardwareManager
 )

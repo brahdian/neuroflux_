@@ -15,10 +15,10 @@ import torch.distributed.algorithms._checkpoint.checkpoint_wrapper as checkpoint
 from typing import Dict, Optional
 from contextlib import nullcontext
 
-from .trainers import UnifiedTrainer
-from .unified_layer import UnifiedNeuroFlux
-from ..monitoring.monitoring import PerformanceMonitor
-from .hypernetwork import UnifiedHyperAction, UnifiedMetrics
+from neuroflux.core.trainers import UnifiedTrainer
+from neuroflux.core.unified_layer import UnifiedNeuroFlux
+from neuroflux.monitoring.monitoring import PerformanceMonitor
+from neuroflux.core.hypernetwork import UnifiedHyperAction, UnifiedMetrics
 
 class DistributedNeuroFluxTrainer(UnifiedTrainer):
     """Extends UnifiedTrainer with distributed capabilities"""

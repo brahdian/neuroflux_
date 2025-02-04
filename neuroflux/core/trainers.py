@@ -18,10 +18,10 @@ from typing import List, Dict
 import time
 
 
-from ..system.checkpoint import CheckpointManager
-from ..system.raid import EnhancedRAID6
-from ..core.hypernetwork import DifferentiableHyperNetwork
-from .unified_layer import UnifiedNeuroFlux
+from neuroflux.system.checkpoint import CheckpointManager
+from neuroflux.system.raid import EnhancedRAID6
+from neuroflux.core.hypernetwork import DifferentiableHyperNetwork
+from neuroflux.core.unified_layer import UnifiedNeuroFlux
 import logging
 logger = logging.getLogger(__name__)
 
